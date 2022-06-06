@@ -10,13 +10,17 @@ class Ship():
     self.rect = self.image.get_rect()
     self.screen_rect = screen.get_rect()
     self.moving_right = False
+    self.moving_left = False
 #start each new ship at the bottom center of the screen
     self.rect.centerx = self.screen_rect.centerx
     self.rect.bottom = self.screen_rect.bottom
 
   def update(self):
+    
     if self.moving_right:
       self.rect.centerx  += 1
+    if self.moving_left: 
+      self.rect.centerx  -= 1
 #Draw the ship at its current location.
   
   def blitme(self):
